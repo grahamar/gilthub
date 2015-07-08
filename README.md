@@ -3,6 +3,10 @@ gilthub
 
 Rust command line application to archive/restore a git repository to/from an AWS S3 bucket.
 
+# Dependencies
+- git
+- aws cli
+
 # Archiving
 
 ### NOTE: Please make sure to create the S3 bucket first.
