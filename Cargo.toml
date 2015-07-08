@@ -1,0 +1,16 @@
+[package]
+
+name = "gilthub"
+version = "0.0.1"
+authors = [ "Graham <graham.a.r@gmail.com>" ]
+
+[dependencies]
+term-painter = "*"
+tempdir = "*"
+docopt = "*"
+rustc-serialize = "*"
+
+[profile.dev]
+debug = true
+debug-assertions = true
+codegen-units = 1
