@@ -95,7 +95,7 @@ fn run_archive(args: &Args) -> Result<String, &'static str> {
 				prof => prof.to_string(),
 			};
 
-			let upload_status = Command::new("aws").arg("s3").arg("cp").arg(format!("{}/{}.tar.gz", compress_dir.path().to_str().unwrap_or("."), repo_name)).arg(&args.arg_bucket_url).arg("--profile").arg(profile).status().unwrap_or_else(|e| {
+			let upload_status = Command::new("aws").arg("s3").arg("cp").arg(format!("{}/{}.tar.gz", compress_dir.path().to_str().unwrap_or("."), repo_name)).arg(format!("s3://{}", &args.arg_bucket_url)).arg("--profile").arg(profile).status().unwrap_or_else(|e| {
 				panic!("failed to copy archive to s3: {}", e)
 			});
 
